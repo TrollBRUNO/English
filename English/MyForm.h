@@ -1,4 +1,5 @@
 #pragma once
+#include"MyForm1.h"
 
 namespace English {
 
@@ -113,7 +114,11 @@ namespace English {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		MyForm1 ^ form_n2 = gcnew MyForm1();
+		form_n2->Show();
+		MyForm::Hide();
 	}
 	};
 }
