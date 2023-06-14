@@ -75,13 +75,17 @@ namespace English {
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 30));
-			this->button1->Location = System::Drawing::Point(496, 324);
+			this->button1->BackColor = System::Drawing::Color::Crimson;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Gold;
+			this->button1->Location = System::Drawing::Point(479, 282);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(219, 135);
+			this->button1->Size = System::Drawing::Size(247, 106);
 			this->button1->TabIndex = 2;
-			this->button1->Text = L"LET\'S GO!";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Text = L"let\'s go";
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// MyForm
