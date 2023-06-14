@@ -83,6 +83,7 @@ namespace English {
 			this->Controls->Add(this->pictureBox1);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->Text = L"FST.English";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
