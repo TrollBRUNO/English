@@ -1,4 +1,5 @@
 #pragma once
+#include"MyForm2.h"
 
 namespace English {
 
@@ -105,9 +106,9 @@ namespace English {
 			this->label3->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->label3->Location = System::Drawing::Point(395, 284);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(327, 32);
+			this->label3->Size = System::Drawing::Size(251, 32);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Введите свой пароль";
+			this->label3->Text = L"Введите пароль";
 			// 
 			// label4
 			// 
@@ -125,7 +126,7 @@ namespace English {
 			// 
 			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Consuela", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->textBox1->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox1->Location = System::Drawing::Point(401, 211);
@@ -138,7 +139,7 @@ namespace English {
 			// 
 			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->textBox2->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox2->Location = System::Drawing::Point(401, 319);
@@ -151,7 +152,7 @@ namespace English {
 			// 
 			this->textBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->textBox3->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox3->Location = System::Drawing::Point(401, 427);
@@ -163,8 +164,8 @@ namespace English {
 			// 
 			// linkLabel1
 			// 
-			this->linkLabel1->ActiveLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->linkLabel1->ActiveLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)),
+				static_cast<System::Int32>(static_cast<System::Byte>(85)), static_cast<System::Int32>(static_cast<System::Byte>(62)));
 			this->linkLabel1->AutoSize = true;
 			this->linkLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->linkLabel1->LinkColor = System::Drawing::SystemColors::MenuBar;
@@ -174,6 +175,7 @@ namespace English {
 			this->linkLabel1->TabIndex = 7;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"Уже есть аккаунт\?";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm1::linkLabel1_LinkClicked);
 			// 
 			// button1
 			// 
@@ -191,6 +193,7 @@ namespace English {
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Зарегистрироваться";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
 			// 
 			// MyForm1
 			// 
@@ -220,5 +223,15 @@ namespace English {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm2^ form_n3 = gcnew MyForm2();
+		form_n3->Show();
+		//MyForm1::Hide();
+	}
+	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		MyForm2^ form_n3 = gcnew MyForm2();
+		form_n3->Show();
+		//MyForm1::Hide();
+	}
+};
 }
