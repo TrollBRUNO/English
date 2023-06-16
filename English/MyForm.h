@@ -76,14 +76,16 @@ namespace English {
 			// 
 			// button1
 			// 
-			this->button1->BackColor = System::Drawing::Color::Crimson;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::Gold;
-			this->button1->Location = System::Drawing::Point(479, 282);
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(238)), static_cast<System::Int32>(static_cast<System::Byte>(130)),
+				static_cast<System::Int32>(static_cast<System::Byte>(57)));
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->button1->Location = System::Drawing::Point(437, 405);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(247, 106);
+			this->button1->Size = System::Drawing::Size(311, 100);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"let\'s go";
 			this->button1->UseVisualStyleBackColor = false;
@@ -118,7 +120,7 @@ namespace English {
 	{
 		MyForm1 ^ form_n2 = gcnew MyForm1();
 		form_n2->Show();
-		MyForm::Hide();
+		//MyForm::Hide();
 	}
 	};
 }

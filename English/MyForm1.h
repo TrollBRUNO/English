@@ -115,7 +115,7 @@ namespace English {
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F));
 			this->label4->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->label4->Location = System::Drawing::Point(395, 402);
+			this->label4->Location = System::Drawing::Point(395, 392);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(286, 32);
 			this->label4->TabIndex = 3;
@@ -125,6 +125,8 @@ namespace English {
 			// 
 			this->textBox1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Consuela", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->textBox1->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox1->Location = System::Drawing::Point(401, 211);
 			this->textBox1->Multiline = true;
@@ -136,6 +138,9 @@ namespace English {
 			// 
 			this->textBox2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox2->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->textBox2->Location = System::Drawing::Point(401, 319);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
@@ -146,14 +151,20 @@ namespace English {
 			// 
 			this->textBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
-			this->textBox3->Location = System::Drawing::Point(401, 437);
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox3->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->textBox3->Location = System::Drawing::Point(401, 427);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
+			this->textBox3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->textBox3->Size = System::Drawing::Size(407, 37);
 			this->textBox3->TabIndex = 6;
 			// 
 			// linkLabel1
 			// 
+			this->linkLabel1->ActiveLinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->linkLabel1->AutoSize = true;
 			this->linkLabel1->BackColor = System::Drawing::Color::Transparent;
 			this->linkLabel1->LinkColor = System::Drawing::SystemColors::MenuBar;
@@ -168,10 +179,13 @@ namespace English {
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
 				static_cast<System::Int32>(static_cast<System::Byte>(62)));
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button1->Location = System::Drawing::Point(432, 512);
+			this->button1->Location = System::Drawing::Point(432, 505);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(344, 80);
 			this->button1->TabIndex = 8;
