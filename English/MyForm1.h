@@ -158,7 +158,6 @@ namespace English {
 			this->textBox3->Location = System::Drawing::Point(401, 427);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->RightToLeft = System::Windows::Forms::RightToLeft::Yes;
 			this->textBox3->Size = System::Drawing::Size(407, 37);
 			this->textBox3->TabIndex = 6;
 			// 

@@ -1,4 +1,5 @@
 #pragma once
+#include"MyForm3.h"
 
 namespace English {
 
@@ -147,6 +148,7 @@ namespace English {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Войти";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm2::button1_Click);
 			// 
 			// linkLabel1
 			// 
@@ -190,6 +192,11 @@ namespace English {
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		//MyForm1^ form_n2 = gcnew MyForm1();
 		//form_n2->Show();
+		//MyForm2::Hide();
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm3^ form_n4 = gcnew MyForm3();
+		form_n4->Show();
 		//MyForm2::Hide();
 	}
 };

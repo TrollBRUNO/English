@@ -1,4 +1,5 @@
 #pragma once
+#include"MyForm4.h"
 
 namespace English {
 
@@ -92,6 +93,7 @@ namespace English {
 			this->button1->TabIndex = 11;
 			this->button1->Text = L"Теория";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm3::button1_Click);
 			// 
 			// button2
 			// 
@@ -159,10 +161,24 @@ namespace English {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm3";
 			this->Text = L"FST.English";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm3::MyForm3_FormClosing);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm4^ form_n5 = gcnew MyForm4();
+		form_n5->Show();
+		//MyForm2::Hide();
+	}
+	private: System::Void MyForm3_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		/*System::Windows::Forms::DialogResult result;
+		result = MessageBox::Show("Вы действительно хотите выйти?", "Вы уверены?", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
+		if (result == ::DialogResult::Yes)
+			Application::ExitThread();
+		else
+			e->Cancel = true;*/
+	}
 };
 }
