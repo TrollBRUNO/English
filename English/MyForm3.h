@@ -170,7 +170,7 @@ namespace English {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm4^ form_n5 = gcnew MyForm4();
 		form_n5->Show();
-		//MyForm2::Hide();
+		//MyForm3::Hide();
 	}
 	private: System::Void MyForm3_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		/*System::Windows::Forms::DialogResult result;
