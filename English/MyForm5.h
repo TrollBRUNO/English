@@ -73,7 +73,7 @@ namespace English {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button1->Location = System::Drawing::Point(24, 21);
+			this->button1->Location = System::Drawing::Point(12, 21);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(147, 46);
 			this->button1->TabIndex = 17;
@@ -97,8 +97,8 @@ namespace English {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm4^ form_n5 = gcnew MyForm4();
-		form_n5->ShowDialog();
+		/*MyForm4^ form_n5 = gcnew MyForm4();
+		form_n5->ShowDialog();*/
 		//MyForm4::Hide();
 	}
 	};
