@@ -1,4 +1,5 @@
 #pragma once
+#include"MyForm4.h"
 
 namespace English {
 
@@ -78,6 +79,7 @@ namespace English {
 			this->button1->TabIndex = 17;
 			this->button1->Text = L"Вернуться обратно";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm5::button1_Click);
 			// 
 			// MyForm5
 			// 
@@ -89,10 +91,15 @@ namespace English {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->webBrowser1);
 			this->Name = L"MyForm5";
-			this->Text = L"MyForm5";
+			this->Text = L"FST.English";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm4^ form_n5 = gcnew MyForm4();
+		form_n5->ShowDialog();
+		//MyForm4::Hide();
+	}
 	};
 }

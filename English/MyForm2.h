@@ -1,5 +1,6 @@
 #pragma once
 #include"MyForm3.h"
+#include"MyForm1.h"
 
 namespace English {
 
