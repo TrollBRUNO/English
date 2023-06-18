@@ -183,6 +183,7 @@ namespace English {
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm2";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -192,12 +193,12 @@ namespace English {
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		/*MyForm1^ registation = gcnew MyForm1();
 		registation->Show();*/
-		//MyForm2::Hide();
+		this->Close();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm3^ menu = gcnew MyForm3();
 		menu->Show();
-		//MyForm2::Hide();
+		this->Close();
 	}
 };
 }

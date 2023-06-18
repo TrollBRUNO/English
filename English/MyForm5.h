@@ -70,6 +70,7 @@ namespace English {
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(117)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
 				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
@@ -91,6 +92,7 @@ namespace English {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->webBrowser1);
 			this->Name = L"MyForm5";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
 			this->ResumeLayout(false);
 
@@ -99,7 +101,7 @@ namespace English {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		/*MyForm4^ theory = gcnew MyForm4();
 		theory->ShowDialog();*/
-		//MyForm4::Hide();
+		this->Close();
 	}
 	private: System::Void webBrowser1_DocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e) {
 		

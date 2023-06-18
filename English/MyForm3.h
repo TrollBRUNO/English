@@ -161,6 +161,7 @@ namespace English {
 			this->Controls->Add(this->label1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm3";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm3::MyForm3_FormClosing);
 			this->ResumeLayout(false);
@@ -171,7 +172,7 @@ namespace English {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm4^ theory = gcnew MyForm4();
 		theory->Show();
-		//MyForm3::Hide();
+		this->Close();
 	}
 	private: System::Void MyForm3_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		/*System::Windows::Forms::DialogResult result;
