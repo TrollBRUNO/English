@@ -168,17 +168,17 @@ namespace English {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm4^ form_n5 = gcnew MyForm4();
-		form_n5->Show();
+		MyForm4^ theory = gcnew MyForm4();
+		theory->Show();
 		//MyForm3::Hide();
 	}
 	private: System::Void MyForm3_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-		/*System::Windows::Forms::DialogResult result;
+		System::Windows::Forms::DialogResult result;
 		result = MessageBox::Show("Вы действительно хотите выйти?", "Вы уверены?", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 		if (result == ::DialogResult::Yes)
 			Application::ExitThread();
 		else
-			e->Cancel = true;*/
+			e->Cancel = true;
 	}
 };
 }

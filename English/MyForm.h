@@ -118,8 +118,8 @@ namespace English {
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		MyForm1 ^ form_n2 = gcnew MyForm1();
-		form_n2->Show();
+		MyForm1 ^ registation = gcnew MyForm1();
+		registation->Show();
 		//MyForm::Hide();
 	}
 	};

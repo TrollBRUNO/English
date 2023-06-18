@@ -223,13 +223,13 @@ namespace English {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm2^ form_n3 = gcnew MyForm2();
-		form_n3->Show();
+		MyForm2^ authorization = gcnew MyForm2();
+		authorization->Show();
 		//MyForm1::Hide();
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		MyForm2^ form_n3 = gcnew MyForm2();
-		form_n3->Show();
+		MyForm2^ authorization1 = gcnew MyForm2();
+		authorization1->Show();
 		//MyForm1::Hide();
 	}
 };

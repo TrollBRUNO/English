@@ -191,13 +191,13 @@ namespace English {
 		}
 #pragma endregion
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		MyForm1^ form_n2 = gcnew MyForm1();
-		form_n2->Show();
+		MyForm1^ registation = gcnew MyForm1();
+		registation->Show();
 		//MyForm2::Hide();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm3^ form_n4 = gcnew MyForm3();
-		form_n4->Show();
+		MyForm3^ menu = gcnew MyForm3();
+		menu->Show();
 		//MyForm2::Hide();
 	}
 };
