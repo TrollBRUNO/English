@@ -1,5 +1,4 @@
 #pragma once
-#include"MyForm4.h"
 
 namespace English {
 
@@ -98,8 +97,8 @@ namespace English {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm4^ theory = gcnew MyForm4();
-		theory->ShowDialog();
+		/*MyForm4^ theory = gcnew MyForm4();
+		theory->ShowDialog();*/
 		//MyForm4::Hide();
 	}
 	private: System::Void webBrowser1_DocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e) {

@@ -128,6 +128,7 @@ namespace English {
 			this->button3->TabIndex = 13;
 			this->button3->Text = L"Выйти";
 			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm3::button3_Click);
 			// 
 			// button4
 			// 
@@ -173,12 +174,15 @@ namespace English {
 		//MyForm3::Hide();
 	}
 	private: System::Void MyForm3_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-		System::Windows::Forms::DialogResult result;
+		/*System::Windows::Forms::DialogResult result;
 		result = MessageBox::Show("Вы действительно хотите выйти?", "Вы уверены?", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 		if (result == ::DialogResult::Yes)
 			Application::ExitThread();
 		else
-			e->Cancel = true;
+			e->Cancel = true;*/
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		Application::ExitThread();
 	}
 };
 }

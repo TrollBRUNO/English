@@ -1,6 +1,5 @@
 #pragma once
 #include"MyForm3.h"
-#include"MyForm1.h"
 
 namespace English {
 
@@ -191,8 +190,8 @@ namespace English {
 		}
 #pragma endregion
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		MyForm1^ registation = gcnew MyForm1();
-		registation->Show();
+		/*MyForm1^ registation = gcnew MyForm1();
+		registation->Show();*/
 		//MyForm2::Hide();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
