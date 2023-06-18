@@ -1,8 +1,12 @@
 #pragma once
 #include"MyForm2.h"
+#include<regex>
+#include <msclr/marshal.h>
 
 namespace English {
 
+	using namespace std;
+	using namespace msclr::interop;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -222,11 +226,36 @@ namespace English {
 			this->PerformLayout();
 
 		}
+		bool isEmailValid(string email) { //проверка на коррекность email
+			regex pattern("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+			return regex_match(email, pattern);
+		}
+
+		string convertToString(String^ str) {
+			marshal_context context; //позволяет выполнить преобразование между типами String^ и string
+			const char* chars = context.marshal_as<const char*>(str);
+			return string(chars);
+		}
+
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm2^ authorization = gcnew MyForm2();
-		authorization->Show();
-		//MyForm1::Hide();
+		String^ email = textBox1->Text;
+		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
+		String^ password = textBox2->Text;
+		String^ password2 = textBox3->Text;
+		int lenPas = sizeof(password); //определяем размер пароля
+		if (isEmailValid(convertedEmail) == true){
+			if (lenPas <= 4) {
+				if (password == password2) {
+					MyForm2^ authorization = gcnew MyForm2();
+					authorization->Show();
+					//MyForm1::Hide();
+				}
+				else MessageBox::Show(this, "Пароли не совпадают!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			}
+			else MessageBox::Show(this, "Пароль должен состоять минимум из 4 символов!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		else MessageBox::Show(this, "Ваш email-адрес введен некорректно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		MyForm2^ authorization1 = gcnew MyForm2();
