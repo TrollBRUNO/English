@@ -121,7 +121,7 @@ namespace English {
 	{
 		MyForm1 ^ registation = gcnew MyForm1();
 		registation->Show();
-		this->Close();
+		//this->Close();
 	}
 	};
 }

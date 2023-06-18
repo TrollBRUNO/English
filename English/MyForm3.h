@@ -172,7 +172,7 @@ namespace English {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm4^ theory = gcnew MyForm4();
 		theory->Show();
-		this->Close();
+		//this->Close();
 	}
 	private: System::Void MyForm3_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
 		/*System::Windows::Forms::DialogResult result;

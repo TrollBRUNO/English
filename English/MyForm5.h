@@ -74,9 +74,9 @@ namespace English {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button1->Location = System::Drawing::Point(12, 21);
+			this->button1->Location = System::Drawing::Point(12, 12);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(147, 46);
+			this->button1->Size = System::Drawing::Size(147, 53);
 			this->button1->TabIndex = 17;
 			this->button1->Text = L"Вернуться обратно";
 			this->button1->UseVisualStyleBackColor = false;
@@ -101,7 +101,7 @@ namespace English {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		/*MyForm4^ theory = gcnew MyForm4();
 		theory->ShowDialog();*/
-		this->Close();
+		//this->Close();
 	}
 	private: System::Void webBrowser1_DocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e) {
 		
