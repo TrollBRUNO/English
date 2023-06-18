@@ -243,19 +243,21 @@ namespace English {
 		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
 		String^ password = textBox2->Text;
 		String^ password2 = textBox3->Text;
-		int lenPas = sizeof(password); //определяем размер пароля
-		if (isEmailValid(convertedEmail) == true){
-			if (lenPas <= 4) {
-				if (password == password2) {
-					MyForm2^ authorization = gcnew MyForm2();
-					authorization->Show();
-					//MyForm1::Hide();
+		if (email->Length > 0 || password->Length > 0) {
+			if (isEmailValid(convertedEmail) == true) {
+				if (password->Length >= 4) {
+					if (password == password2) {
+						MyForm2^ authorization = gcnew MyForm2();
+						authorization->Show();
+						//MyForm1::Hide();
+					}
+					else MessageBox::Show(this, "Пароли не совпадают!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				}
-				else MessageBox::Show(this, "Пароли не совпадают!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				else MessageBox::Show(this, "Пароль должен состоять минимум из 4 символов!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			}
-			else MessageBox::Show(this, "Пароль должен состоять минимум из 4 символов!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			else MessageBox::Show(this, "Ваш email-адрес введен некорректно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-		else MessageBox::Show(this, "Ваш email-адрес введен некорректно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		else MessageBox::Show(this, "Введите email-адрес и пароль!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		MyForm2^ authorization1 = gcnew MyForm2();
