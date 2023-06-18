@@ -186,7 +186,7 @@ namespace English {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button1->Location = System::Drawing::Point(432, 505);
+			this->button1->Location = System::Drawing::Point(436, 507);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(344, 80);
 			this->button1->TabIndex = 8;

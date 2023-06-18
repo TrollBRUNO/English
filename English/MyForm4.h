@@ -151,15 +151,17 @@ namespace English {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		//MyForm5->webBrowser1->Url = gcnew System::Uri(L"V:\\C121\\Àòàíàñîâ\\ÏÐÀÊÒÈÊÀ\\Present Simple.html", System::UriKind::Absolute);
 		MyForm5^ form_n6 = gcnew MyForm5();
-		form_n6->ShowDialog();
+		form_n6->Show();
 		//MyForm4::Hide();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//MyForm5->webBrowser1->Url = gcnew System::Uri(L"V:\\C121\\Àòàíàñîâ\\ÏÐÀÊÒÈÊÀ\\Past Simple.html", System::UriKind::Absolute);
 		MyForm5^ form_n6 = gcnew MyForm5();
 		form_n6->Show();
 		//MyForm4::Hide();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		//MyForm5->webBrowser1->Url = gcnew System::Uri(L"V:\\C121\\Àòàíàñîâ\\ÏÐÀÊÒÈÊÀ\\Future Simple.html", System::UriKind::Absolute);
 		MyForm5^ form_n6 = gcnew MyForm5();
 		form_n6->Show();
 		//MyForm4::Hide();
