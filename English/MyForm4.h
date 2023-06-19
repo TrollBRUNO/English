@@ -1,5 +1,8 @@
 #pragma once
 #include"MyForm5.h"
+#include<iostream>
+#include<fstream>
+#include <string>
 
 namespace English {
 
@@ -46,7 +49,7 @@ namespace English {
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -144,25 +147,39 @@ namespace English {
 			this->Name = L"MyForm4";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
+			this->Load += gcnew System::EventHandler(this, &MyForm4::MyForm4_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
+		String^ filename;
 #pragma endregion
+	private: System::Void MyForm4_Load(System::Object^ sender, System::EventArgs^ e) {
+		filename = "V:\\C121\\Атанасов\\ПРАКТИКА\\tense.txt"; //адрес
+	}
+
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		//MyForm5->webBrowser1->Url = gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Present Simple.html", System::UriKind::Absolute);
+		auto Writer = gcnew IO::StreamWriter(filename, false);
+		Writer->WriteLine("1");
+		Writer->Close();
 		MyForm5^ PrS_theory = gcnew MyForm5();
 		PrS_theory->Show();
 		//MyForm4::Hide();
 	}
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		//MyForm5->webBrowser1->Url = gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Past Simple.html", System::UriKind::Absolute);
+		auto Writer = gcnew IO::StreamWriter(filename, false);
+		Writer->WriteLine("2");
+		Writer->Close();
 		MyForm5^ PS_theory = gcnew MyForm5();
 		PS_theory->Show();
 		//MyForm4::Hide();
 	}
+
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		//MyForm5->webBrowser1->Url = gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Future Simple.html", System::UriKind::Absolute);
+		auto Writer = gcnew IO::StreamWriter(filename, false);
+		Writer->WriteLine("3");
+		Writer->Close();
 		MyForm5^ FS_theory = gcnew MyForm5();
 		FS_theory->Show();
 		//MyForm4::Hide();

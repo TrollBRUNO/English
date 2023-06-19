@@ -94,17 +94,38 @@ namespace English {
 			this->Name = L"MyForm5";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
+			this->Load += gcnew System::EventHandler(this, &MyForm5::MyForm5_Load);
 			this->ResumeLayout(false);
 
 		}
+		String^ filename;
 #pragma endregion
+	private: System::Void MyForm5_Load(System::Object^ sender, System::EventArgs^ e) {
+		filename = "V:\\C121\\Атанасов\\ПРАКТИКА\\tense.txt"; //адрес
+	}
+
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		/*MyForm4^ theory = gcnew MyForm4();
 		theory->ShowDialog();*/
 		//this->Close();
 	}
+
 	private: System::Void webBrowser1_DocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e) {
-		
+		auto Reader = gcnew IO::StreamReader(filename);
+		String^ chooseTense = Reader->ReadLine();
+		Reader->Close();
+
+		if (chooseTense == "1") {
+			this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Present Simple.html", System::UriKind::Absolute));
+		}
+
+		if (chooseTense == "2") {
+			this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Past Simple.html", System::UriKind::Absolute));
+		}
+
+		if (chooseTense == "3") {
+			this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Future Simple.html", System::UriKind::Absolute));
+		}
 	}
-	};
+};
 }

@@ -247,6 +247,7 @@ namespace English {
 			if (isEmailValid(convertedEmail) == true) {
 				if (password->Length >= 4) {
 					if (password == password2) {
+						MessageBox::Show(this, "Регистрация прошла успешно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Information);
 						MyForm2^ authorization = gcnew MyForm2();
 						authorization->Show();
 						//MyForm1::Hide();
