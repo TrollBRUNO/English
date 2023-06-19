@@ -110,21 +110,25 @@ namespace English {
 		//this->Close();
 	}
 
+	bool isDocumentComplited = false;
 	private: System::Void webBrowser1_DocumentCompleted(System::Object^ sender, System::Windows::Forms::WebBrowserDocumentCompletedEventArgs^ e) {
 		auto Reader = gcnew IO::StreamReader(filename);
 		String^ chooseTense = Reader->ReadLine();
 		Reader->Close();
 
-		if (chooseTense == "1") {
-			this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\¿Ú‡Ì‡ÒÓ‚\\œ–¿ “» ¿\\Present Simple.html", System::UriKind::Absolute));
-		}
+		if (!isDocumentComplited) {
+			if (chooseTense == "1") {
+				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\¿Ú‡Ì‡ÒÓ‚\\œ–¿ “» ¿\\Present Simple.html", System::UriKind::Absolute));
+			}
 
-		if (chooseTense == "2") {
-			this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\¿Ú‡Ì‡ÒÓ‚\\œ–¿ “» ¿\\Past Simple.html", System::UriKind::Absolute));
-		}
+			if (chooseTense == "2") {
+				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\¿Ú‡Ì‡ÒÓ‚\\œ–¿ “» ¿\\Past Simple.html", System::UriKind::Absolute));
+			}
 
-		if (chooseTense == "3") {
-			this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\¿Ú‡Ì‡ÒÓ‚\\œ–¿ “» ¿\\Future Simple.html", System::UriKind::Absolute));
+			if (chooseTense == "3") {
+				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\¿Ú‡Ì‡ÒÓ‚\\œ–¿ “» ¿\\Future Simple.html", System::UriKind::Absolute));
+			}
+			isDocumentComplited = true;
 		}
 	}
 };
