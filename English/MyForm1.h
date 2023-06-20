@@ -236,21 +236,27 @@ namespace English {
 			const char* chars = context.marshal_as<const char*>(str);
 			return string(chars);
 		}
-
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ email = textBox1->Text;
 		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
 		String^ password = textBox2->Text;
+		string convertedPassword = convertToString(password); //преобразовываем переменную из String^ в string
 		String^ password2 = textBox3->Text;
 		if (email->Length > 0 || password->Length > 0) {
 			if (isEmailValid(convertedEmail) == true) {
 				if (password->Length >= 4) {
 					if (password == password2) {
-						MessageBox::Show(this, "Регистрация прошла успешно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Information);
-						MyForm2^ authorization = gcnew MyForm2();
-						authorization->Show();
-						//MyForm1::Hide();
+						ofstream file("C:\\Users\\Капитан - Торрент\\source\\repos\\trash\\users account.txt", ios::app);
+						if (file.is_open()) {
+							file << convertedEmail << " " << convertedPassword << endl;
+							file.close();
+							MessageBox::Show(this, "Регистрация прошла успешно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Information);
+							MyForm2^ authorization = gcnew MyForm2();
+							authorization->Show();
+							//MyForm1::Hide();
+						}
+						else MessageBox::Show(this, "Произошла ошибка с файлом", "File Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 					}
 					else MessageBox::Show(this, "Пароли не совпадают!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				}

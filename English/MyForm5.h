@@ -118,15 +118,15 @@ namespace English {
 
 		if (!isDocumentComplited) {
 			if (chooseTense == "1") {
-				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Present Simple.html", System::UriKind::Absolute));
+				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Present Simple.html", System::UriKind::Absolute)); //адрес
 			}
 
 			if (chooseTense == "2") {
-				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Past Simple.html", System::UriKind::Absolute));
+				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Past Simple.html", System::UriKind::Absolute)); //адрес
 			}
 
 			if (chooseTense == "3") {
-				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Future Simple.html", System::UriKind::Absolute));
+				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Future Simple.html", System::UriKind::Absolute)); //адрес
 			}
 			isDocumentComplited = true;
 		}

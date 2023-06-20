@@ -1,8 +1,12 @@
 #pragma once
 #include"MyForm3.h"
+#include<regex>
+#include <msclr/marshal.h>
 
 namespace English {
 
+	using namespace std;
+	using namespace msclr::interop;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -189,6 +193,27 @@ namespace English {
 			this->PerformLayout();
 
 		}
+	bool login(string email, string password) {
+		ifstream file("C:\\Users\\Капитан - Торрент\\source\\repos\\trash\\users account.txt"); // открываем файл для чтения
+		string line;
+		while (getline(file, line)) { // читаем файл построчно
+			size_t pos = line.find(' '); // находим позицию первого пробела
+			string file_email = line.substr(0, pos); // выделяем email из строки
+			string file_password = line.substr(pos + 1); // выделяем пароль из строки
+			if (file_email == email && file_password == password) { // если email и пароль совпадают
+				file.close(); // закрываем файл
+				return true; // возвращаем true
+			}
+		}
+		file.close(); // закрываем файл
+		return false; // если не нашли соответствия, возвращаем false
+	}
+
+	string convertToString(String^ str) {
+		marshal_context context; //позволяет выполнить преобразование между типами String^ и string
+		const char* chars = context.marshal_as<const char*>(str);
+		return string(chars);
+	}
 #pragma endregion
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		/*MyForm1^ registation = gcnew MyForm1();
@@ -196,9 +221,17 @@ namespace English {
 		//this->Close();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm3^ menu = gcnew MyForm3();
-		menu->Show();
-		//this->Close();
+		String^ email = textBox1->Text;
+		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
+		String^ password = textBox2->Text;
+		string convertedPassword = convertToString(password); //преобразовываем переменную из String^ в string
+		if (login(convertedEmail, convertedPassword)) {
+			MessageBox::Show(this, "Авторизация вашего аккаунта прошла успешно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Information);
+			MyForm3^ menu = gcnew MyForm3();
+			menu->Show();
+			//this->Close();
+		}
+		else MessageBox::Show(this, "Данного аккаунта не существует", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 };
 }
