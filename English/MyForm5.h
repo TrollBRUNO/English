@@ -91,6 +91,7 @@ namespace English {
 			this->ClientSize = System::Drawing::Size(1211, 681);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->webBrowser1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm5";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";

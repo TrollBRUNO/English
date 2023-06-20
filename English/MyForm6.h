@@ -146,6 +146,7 @@ namespace English {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->label1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm6";
 			this->Text = L"FST.English";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
@@ -154,12 +155,62 @@ namespace English {
 
 		}
 #pragma endregion
-	bool isDocumentComplited = false;
+	/*bool isDocumentComplited = false;*/
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (!isDocumentComplited) {
+		/*if (!isDocumentComplited) {
 			
 			isDocumentComplited = true;
+		}*/
+		int count = 0;
+		switch (count) {
+		case 0:
+			label3->Text = "Первый вопрос";
+			count++;
+			break;
+		case 1:
+			label3->Text = "Второй вопрос";
+			count++;
+			break;
+		case 2:
+			label3->Text = "Третий вопрос";
+			count++;
+			break;
+		case 3:
+			label3->Text = "Четвертый вопрос";
+			count++;
+			break;
+		case 4:
+			label3->Text = "Пятый вопрос";
+			label3->Refresh();
+			count++;
+			break;
+		case 5:
+			label3->Text = "Шестой вопрос";
+			label3->Refresh();
+			count++;
+			break;
+		case 6:
+			label3->Text = "Седьмой вопрос";
+			label3->Refresh();
+			count++;
+			break;
+		case 7:
+			label3->Text = "Восьмой вопрос";
+			label3->Refresh();
+			count++;
+			break;
+		case 8:
+			label3->Text = "Девятый вопрос";
+			label3->Refresh();
+			count++;
+			break;
+		case 9:
+			label3->Text = "Десятый вопрос";
+			label3->Refresh();
+			count = 0;
+			break;
 		}
+
 	}
 	};
 }
