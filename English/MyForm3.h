@@ -1,5 +1,6 @@
 #pragma once
 #include"MyForm4.h"
+#include"MyForm6.h"
 
 namespace English {
 
@@ -111,6 +112,7 @@ namespace English {
 			this->button2->TabIndex = 12;
 			this->button2->Text = L"Контрольный тест";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm3::button2_Click);
 			// 
 			// button3
 			// 
@@ -184,6 +186,11 @@ namespace English {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		Application::ExitThread();
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm6^ test = gcnew MyForm6();
+		test->Show();
+		//this->Close();
 	}
 };
 }
