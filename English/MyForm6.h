@@ -40,6 +40,7 @@ namespace English {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 
+
 	protected:
 
 	protected:
@@ -155,62 +156,47 @@ namespace English {
 
 		}
 #pragma endregion
-	/*bool isDocumentComplited = false;*/
+	int count = 1;
+
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		/*if (!isDocumentComplited) {
-			
-			isDocumentComplited = true;
-		}*/
-		int count = 0;
 		switch (count) {
-		case 0:
-			label3->Text = "Первый вопрос";
-			count++;
-			break;
 		case 1:
-			label3->Text = "Второй вопрос";
+			this->label3->Text = "Второй вопрос";
 			count++;
 			break;
 		case 2:
-			label3->Text = "Третий вопрос";
+			this->label3->Text = "Третий вопрос";
 			count++;
 			break;
 		case 3:
-			label3->Text = "Четвертый вопрос";
+			this->label3->Text = "Четвертый вопрос";
 			count++;
 			break;
 		case 4:
-			label3->Text = "Пятый вопрос";
-			label3->Refresh();
+			this->label3->Text = "Пятый вопрос";
 			count++;
 			break;
 		case 5:
-			label3->Text = "Шестой вопрос";
-			label3->Refresh();
+			this->label3->Text = "Шестой вопрос";
 			count++;
 			break;
 		case 6:
-			label3->Text = "Седьмой вопрос";
-			label3->Refresh();
+			this->label3->Text = "Седьмой вопрос";
 			count++;
 			break;
 		case 7:
-			label3->Text = "Восьмой вопрос";
-			label3->Refresh();
+			this->label3->Text = "Восьмой вопрос";
 			count++;
 			break;
 		case 8:
-			label3->Text = "Девятый вопрос";
-			label3->Refresh();
+			this->label3->Text = "Девятый вопрос";
 			count++;
 			break;
 		case 9:
-			label3->Text = "Десятый вопрос";
-			label3->Refresh();
+			this->label3->Text = "Десятый вопрос";
 			count = 0;
 			break;
 		}
-
 	}
-	};
+};
 }

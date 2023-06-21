@@ -194,7 +194,7 @@ namespace English {
 
 		}
 	bool login(string email, string password) {
-		ifstream file("C:\\Users\\Капитан - Торрент\\source\\repos\\trash\\users account.txt"); // открываем файл для чтения
+		ifstream file("V:\\C121\\Атанасов\\ПРАКТИКА\\users account.txt"); // открываем файл для чтения
 		string line;
 		while (getline(file, line)) { // читаем файл построчно
 			size_t pos = line.find(' '); // находим позицию первого пробела
