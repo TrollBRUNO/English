@@ -148,11 +148,10 @@ namespace English {
 			this->label5->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->label5->Location = System::Drawing::Point(228, 304);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(762, 144);
+			this->label5->Size = System::Drawing::Size(494, 180);
 			this->label5->TabIndex = 5;
-			this->label5->Text = L"1. What is the present simple tense used for\?\r\na) Actions that happened in the pa"
-				L"st\r\nb) Actions that are happening now\r\nc) Actions that will happen in the future"
-				L"\r\n";
+			this->label5->Text = L"1. Example\?\r\na) Example Example Example\r\nb) Example Example Example\r\nc) Example E"
+				L"xample Example\r\n\r\n";
 			// 
 			// MyForm6
 			// 
@@ -176,8 +175,76 @@ namespace English {
 
 		}
 #pragma endregion
+		String^ file = "V:\\C121\\Атанасов\\ПРАКТИКА\\1 questions pack.txt"; //адрес
+		String^ file1 = "V:\\C121\\Атанасов\\ПРАКТИКА\\1 QuestPack.txt"; //адрес
+		void ReadFileAndSetLabel()
+		{
+			auto Reader = gcnew IO::StreamReader(file1);
+			String^ line;
+			String^ content = "";
+			while ((line = Reader->ReadLine()) != nullptr)
+			{
+				if (line->Trim() == "")
+				{
+					break; // выходим из цикла, если встретили пустую строку
+				}
+				content += line + "\n"; // добавляем текущую строку к содержимому
+			}
+
+			Reader->Close();
+
+			// записываем содержимое в label
+			label5->Text = content;
+
+			// открываем файл для записи
+			auto Writer = gcnew IO::StreamWriter(file1);
+
+			// записываем новое значение до следующей пустой строки
+			while ((line = Reader->ReadLine()) != nullptr)
+			{
+				if (line->Trim() == "")
+				{
+					Writer->Close();
+					break; // выходим из цикла, если встретили пустую строку
+				}
+				Writer->WriteLine(line); // записываем текущую строку в файл
+			}
+
+			Writer->Close();
+		}
+	
 	int count = 1;
+
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+		//ReadFileAndSetLabel();
+
+		ifstream Reader("V:\\C121\\Атанасов\\ПРАКТИКА\\1 questions pack.txt");;
+
+		string line;
+		string content = "";
+
+		// читаем первые 10 абзацев
+		for (int i = 0; i < 10; i++)
+		{
+			// читаем строки до пустой строки
+			while (getline(Reader, line))
+			{
+				if (line.empty())
+				{
+					break;
+				}
+				content += line + "\n";
+			}
+			// добавляем разделитель между абзацами
+			content += "\n";
+		}
+
+		Reader.close();
+
+		// выводим содержимое переменной в консоль
+		this->label5->Text = content;
+
+
 		if (numericUpDown1->Value != 0) {
 			switch (count) {
 			case 1:
