@@ -2,6 +2,7 @@
 
 namespace English {
 
+	using namespace std;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -39,6 +40,8 @@ namespace English {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+
 
 
 	protected:
@@ -64,6 +67,7 @@ namespace English {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -113,12 +117,12 @@ namespace English {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Consuela", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label3->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->label3->Location = System::Drawing::Point(230, 218);
+			this->label3->Location = System::Drawing::Point(485, 241);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(172, 23);
+			this->label3->Size = System::Drawing::Size(241, 32);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"Первый вопрос";
 			// 
@@ -135,6 +139,21 @@ namespace English {
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"Контрольный тест";
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Cursor = System::Windows::Forms::Cursors::Default;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Consuela", 22.6F));
+			this->label5->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->label5->Location = System::Drawing::Point(228, 304);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(762, 144);
+			this->label5->TabIndex = 5;
+			this->label5->Text = L"1. What is the present simple tense used for\?\r\na) Actions that happened in the pa"
+				L"st\r\nb) Actions that are happening now\r\nc) Actions that will happen in the future"
+				L"\r\n";
+			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -142,6 +161,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -157,46 +177,64 @@ namespace English {
 		}
 #pragma endregion
 	int count = 1;
-
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		switch (count) {
-		case 1:
-			this->label3->Text = "Второй вопрос";
-			count++;
-			break;
-		case 2:
-			this->label3->Text = "Третий вопрос";
-			count++;
-			break;
-		case 3:
-			this->label3->Text = "Четвертый вопрос";
-			count++;
-			break;
-		case 4:
-			this->label3->Text = "Пятый вопрос";
-			count++;
-			break;
-		case 5:
-			this->label3->Text = "Шестой вопрос";
-			count++;
-			break;
-		case 6:
-			this->label3->Text = "Седьмой вопрос";
-			count++;
-			break;
-		case 7:
-			this->label3->Text = "Восьмой вопрос";
-			count++;
-			break;
-		case 8:
-			this->label3->Text = "Девятый вопрос";
-			count++;
-			break;
-		case 9:
-			this->label3->Text = "Десятый вопрос";
-			count = 0;
-			break;
+		if (numericUpDown1->Value != 0) {
+			switch (count) {
+			case 1:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Второй вопрос";
+				count++;
+				break;
+			case 2:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Третий вопрос";
+				count++;
+				break;
+			case 3:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Четвертый вопрос";
+				count++;
+				break;
+			case 4:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Пятый вопрос";
+				count++;
+				break;
+			case 5:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Шестой вопрос";
+				count++;
+				break;
+			case 6:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Седьмой вопрос";
+				count++;
+				break;
+			case 7:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Восьмой вопрос";
+				count++;
+				break;
+			case 8:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Девятый вопрос";
+				count++;
+				break;
+			case 9:
+				this->numericUpDown1->Value = 0;
+				this->label3->Text = "Десятый вопрос";
+				this->label1->Text = "Завершить\n тест";
+				count++;
+				break;
+			case 10:
+				String ^ message = String::Format("Вы набрали {0} из 10 баллов", count);
+				MessageBox::Show(this, message, "Результат тестирования", MessageBoxButtons::OK, MessageBoxIcon::Information);
+				//this->Close();
+				count = 0;
+				break;
+			}
 		}
+		else MessageBox::Show(this, "Вы не ввели ответ!", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 };
 }
