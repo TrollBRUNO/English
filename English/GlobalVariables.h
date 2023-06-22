@@ -2,5 +2,5 @@
 public ref class GlobalVariables
 {
 public:
-    static System::String^ globalEmail;
+	static System::String^ globalEmail;
 };

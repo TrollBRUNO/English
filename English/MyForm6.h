@@ -298,7 +298,7 @@ namespace English {
 				MessageBox::Show(this, message, "Результат тестирования", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				ofstream file("E:\\ПРАКТИКА\\table leader.txt", ios::app); //адрес
 				if (file.is_open()) {
-					file << convertedEmail << " " << score << endl;
+					file << convertedEmail << "   -   " << score << "/10" << endl;
 					file.close();
 				}
 				//this->Close();

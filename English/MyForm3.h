@@ -1,6 +1,7 @@
 #pragma once
 #include"MyForm4.h"
 #include"MyForm6.h"
+#include"MyForm7.h"
 
 namespace English {
 
@@ -148,6 +149,7 @@ namespace English {
 			this->button4->TabIndex = 14;
 			this->button4->Text = L"Таблица лидеров";
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm3::button4_Click);
 			// 
 			// MyForm3
 			// 
@@ -190,6 +192,11 @@ namespace English {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm6^ test = gcnew MyForm6();
 		test->Show();
+		//this->Close();
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm7^ tableLeader = gcnew MyForm7();
+		tableLeader->Show();
 		//this->Close();
 	}
 };
