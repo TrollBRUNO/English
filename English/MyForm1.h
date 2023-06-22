@@ -247,7 +247,7 @@ namespace English {
 			if (isEmailValid(convertedEmail) == true) {
 				if (password->Length >= 4) {
 					if (password == password2) {
-						ofstream file("V:\\C121\\Атанасов\\ПРАКТИКА\\users account.txt", ios::app);
+						ofstream file("V:\\C121\\Атанасов\\ПРАКТИКА\\users account.txt", ios::app); //адрес
 						if (file.is_open()) {
 							file << convertedEmail << " " << convertedPassword << endl;
 							file.close();

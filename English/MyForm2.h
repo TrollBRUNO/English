@@ -2,6 +2,7 @@
 #include"MyForm3.h"
 #include<regex>
 #include <msclr/marshal.h>
+#include "GlobalVariables.h"
 
 namespace English {
 
@@ -222,6 +223,7 @@ namespace English {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ email = textBox1->Text;
+		GlobalVariables::globalEmail = email;
 		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
 		String^ password = textBox2->Text;
 		string convertedPassword = convertToString(password); //преобразовываем переменную из String^ в string
