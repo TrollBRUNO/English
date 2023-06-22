@@ -145,6 +145,7 @@ namespace English {
 			this->Controls->Add(this->label4);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm7";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
 			this->Load += gcnew System::EventHandler(this, &MyForm7::MyForm7_Load);
 			this->ResumeLayout(false);
@@ -183,26 +184,5 @@ namespace English {
 
 			label2->Text = labelText;
 		}
-
-		//private: System::Void MyForm7_Load(System::Object^ sender, System::EventArgs^ e) {
-		//	auto Reader = gcnew IO::StreamReader(filename);
-
-		//	String^ line;
-		//	String^ content = "";
-
-		//	while ((line = Reader->ReadLine()) != nullptr)
-		//	{
-		//		if (line->Trim() == "")
-		//		{
-		//			break; // выходим из цикла, если встретили пустую строку
-		//		}
-		//		content += line + "\n"; // добавляем текущую строку к содержимому
-		//	}
-
-		//	Reader->Close();
-
-		//	// записываем содержимое в label
-		//	label2->Text = content;
-		//}
 };
 }

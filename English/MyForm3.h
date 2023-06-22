@@ -2,6 +2,7 @@
 #include"MyForm4.h"
 #include"MyForm6.h"
 #include"MyForm7.h"
+#include"MyForm8.h"
 
 namespace English {
 
@@ -42,6 +43,7 @@ namespace English {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
 	protected:
 
 	private:
@@ -63,6 +65,7 @@ namespace English {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -89,7 +92,7 @@ namespace English {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button1->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button1->Location = System::Drawing::Point(385, 180);
+			this->button1->Location = System::Drawing::Point(385, 155);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(440, 80);
 			this->button1->TabIndex = 11;
@@ -107,7 +110,7 @@ namespace English {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button2->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button2->Location = System::Drawing::Point(385, 292);
+			this->button2->Location = System::Drawing::Point(385, 346);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(440, 80);
 			this->button2->TabIndex = 12;
@@ -125,7 +128,7 @@ namespace English {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button3->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button3->Location = System::Drawing::Point(385, 521);
+			this->button3->Location = System::Drawing::Point(385, 539);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(440, 80);
 			this->button3->TabIndex = 13;
@@ -143,13 +146,31 @@ namespace English {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button4->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->button4->Location = System::Drawing::Point(385, 406);
+			this->button4->Location = System::Drawing::Point(385, 442);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(440, 80);
 			this->button4->TabIndex = 14;
 			this->button4->Text = L"Таблица лидеров";
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm3::button4_Click);
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
+				static_cast<System::Int32>(static_cast<System::Byte>(62)));
+			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button5->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->button5->Location = System::Drawing::Point(385, 250);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(440, 80);
+			this->button5->TabIndex = 15;
+			this->button5->Text = L"Тренажер";
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm3::button5_Click);
 			// 
 			// MyForm3
 			// 
@@ -158,6 +179,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -197,6 +219,11 @@ namespace English {
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm7^ tableLeader = gcnew MyForm7();
 		tableLeader->Show();
+		//this->Close();
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm8^ trainer = gcnew MyForm8();
+		trainer->Show();
 		//this->Close();
 	}
 };

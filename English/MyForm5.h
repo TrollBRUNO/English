@@ -36,6 +36,7 @@ namespace English {
 		}
 	private: System::Windows::Forms::WebBrowser^ webBrowser1;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ label4;
 	protected:
 
 	private:
@@ -54,6 +55,7 @@ namespace English {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm5::typeid));
 			this->webBrowser1 = (gcnew System::Windows::Forms::WebBrowser());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// webBrowser1
@@ -82,6 +84,22 @@ namespace English {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm5::button1_Click);
 			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(254)), static_cast<System::Int32>(static_cast<System::Byte>(222)),
+				static_cast<System::Int32>(static_cast<System::Byte>(161)));
+			this->label4->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Consuela", 48, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(67)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(109)));
+			this->label4->Location = System::Drawing::Point(312, 124);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(779, 76);
+			this->label4->TabIndex = 18;
+			this->label4->Text = L"Теоретическая часть";
+			// 
 			// MyForm5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -89,6 +107,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->webBrowser1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -97,6 +116,7 @@ namespace English {
 			this->Text = L"FST.English";
 			this->Load += gcnew System::EventHandler(this, &MyForm5::MyForm5_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 		String^ filename;
