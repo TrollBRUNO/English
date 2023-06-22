@@ -47,7 +47,7 @@ namespace English {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
+
 
 
 
@@ -75,7 +75,6 @@ namespace English {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -162,19 +161,6 @@ namespace English {
 				L"st\r\nb) Actions that are happening now\r\nc) Actions that will happen in the future"
 				L"\r\n";
 			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label6->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->label6->Location = System::Drawing::Point(1, 9);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(241, 32);
-			this->label6->TabIndex = 6;
-			this->label6->Text = L"Первый вопрос";
-			// 
 			// MyForm6
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -182,7 +168,6 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
-			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -198,27 +183,6 @@ namespace English {
 
 		}
 #pragma endregion
-		String^ file = "V:\\C121\\Атанасов\\ПРАКТИКА\\1 questions pack.txt"; //адрес
-		String^ file1 = "V:\\C121\\Атанасов\\ПРАКТИКА\\1 QuestPack.txt"; //адрес
-		void ReadFileAndSetLabel()
-		{
-			auto Reader = gcnew IO::StreamReader(file1);
-			String^ line;
-			String^ content = "";
-			while ((line = Reader->ReadLine()) != nullptr)
-			{
-				if (line->Trim() == "")
-				{
-					break; // выходим из цикла, если встретили пустую строку
-				}
-				content += line + "\n"; // добавляем текущую строку к содержимому
-			}
-
-			Reader->Close();
-
-			// записываем содержимое в label
-			label5->Text = content;
-		}
 		string convertToString(String^ str) {
 			marshal_context context; //позволяет выполнить преобразование между типами String^ и string
 			const char* chars = context.marshal_as<const char*>(str);
@@ -229,8 +193,6 @@ namespace English {
 	int score = 0;
 
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		ReadFileAndSetLabel();
-		label6->Text = GlobalVariables::globalEmail;
 		String^ email = GlobalVariables::globalEmail;
 		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
 		if (numericUpDown1->Value != 0) {
@@ -332,12 +294,12 @@ namespace English {
 				count++;
 				break;
 			case 10:
-				String ^ message = String::Format("Вы набрали {0} из 10 баллов {}", score, GlobalVariables::globalEmail);
+				String ^ message = String::Format("Вы набрали {0} из 10 баллов", score);
 				MessageBox::Show(this, message, "Результат тестирования", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				ofstream file2("V:\\C121\\Атанасов\\ПРАКТИКА\\table leader.txt", ios::app); //адрес
-				if (file2.is_open()) {
-					file2 << convertedEmail << " " << score << endl;
-					file2.close();
+				ofstream file("E:\\ПРАКТИКА\\table leader.txt", ios::app); //адрес
+				if (file.is_open()) {
+					file << convertedEmail << " " << score << endl;
+					file.close();
 				}
 				//this->Close();
 				count = 0;

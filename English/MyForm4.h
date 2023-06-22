@@ -155,7 +155,7 @@ namespace English {
 		String^ filename;
 #pragma endregion
 	private: System::Void MyForm4_Load(System::Object^ sender, System::EventArgs^ e) {
-		filename = "V:\\C121\\Атанасов\\ПРАКТИКА\\tense.txt"; //адрес
+		filename = "E:\\ПРАКТИКА\\tense.txt"; //адрес
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
