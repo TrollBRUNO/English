@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <msclr/marshal_cppstd.h>
 
 namespace English {
 
@@ -120,7 +124,7 @@ namespace English {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Consuela", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label3->ForeColor = System::Drawing::SystemColors::MenuBar;
-			this->label3->Location = System::Drawing::Point(485, 241);
+			this->label3->Location = System::Drawing::Point(485, 248);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(241, 32);
 			this->label3->TabIndex = 3;
@@ -148,10 +152,11 @@ namespace English {
 			this->label5->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->label5->Location = System::Drawing::Point(228, 304);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(494, 180);
+			this->label5->Size = System::Drawing::Size(762, 144);
 			this->label5->TabIndex = 5;
-			this->label5->Text = L"1. Example\?\r\na) Example Example Example\r\nb) Example Example Example\r\nc) Example E"
-				L"xample Example\r\n\r\n";
+			this->label5->Text = L"1. What is the present simple tense used for\?\r\na) Actions that happened in the pa"
+				L"st\r\nb) Actions that are happening now\r\nc) Actions that will happen in the future"
+				L"\r\n";
 			// 
 			// MyForm6
 			// 
@@ -195,101 +200,114 @@ namespace English {
 
 			// записываем содержимое в label
 			label5->Text = content;
-
-			// открываем файл для записи
-			auto Writer = gcnew IO::StreamWriter(file1);
-
-			// записываем новое значение до следующей пустой строки
-			while ((line = Reader->ReadLine()) != nullptr)
-			{
-				if (line->Trim() == "")
-				{
-					Writer->Close();
-					break; // выходим из цикла, если встретили пустую строку
-				}
-				Writer->WriteLine(line); // записываем текущую строку в файл
-			}
-
-			Writer->Close();
 		}
-	
+		//	// открываем файл для записи
+		//	auto Writer = gcnew IO::StreamWriter(file1);
+
+		//	// записываем новое значение до следующей пустой строки
+		//	while ((line = Reader->ReadLine()) != nullptr)
+		//	{
+		//		if (line->Trim() == "")
+		//		{
+		//			Writer->Close();
+		//			break; // выходим из цикла, если встретили пустую строку
+		//		}
+		//		Writer->WriteLine(line); // записываем текущую строку в файл
+		//	}
+
+		//	Writer->Close();
+		//}
+		
 	int count = 1;
-
+	int score = 0;
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-		//ReadFileAndSetLabel();
-
-		ifstream Reader("V:\\C121\\Атанасов\\ПРАКТИКА\\1 questions pack.txt");;
-
-		string line;
-		string content = "";
-
-		// читаем первые 10 абзацев
-		for (int i = 0; i < 10; i++)
-		{
-			// читаем строки до пустой строки
-			while (getline(Reader, line))
-			{
-				if (line.empty())
-				{
-					break;
-				}
-				content += line + "\n";
-			}
-			// добавляем разделитель между абзацами
-			content += "\n";
-		}
-
-		Reader.close();
-
-		// выводим содержимое переменной в консоль
-		this->label5->Text = content;
-
+		ReadFileAndSetLabel();
 
 		if (numericUpDown1->Value != 0) {
 			switch (count) {
 			case 1:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Второй вопрос";
+				this->label5->Text = "2. What is the past simple tense used for?"
+					"\n\r1) Actions that happened in the past"
+					"\n\r2) Actions that are happening now"
+					"\n\r3) Actions that will happen in the future";
 				count++;
 				break;
 			case 2:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Третий вопрос";
+				this->label5->Text = "3. What is the future simple tense used for?"
+					"\n\r1) Actions that happened in the past"
+					"\n\r2) Actions that are happening now"
+					"\n\r3) Actions that will happen in the future";
 				count++;
 				break;
 			case 3:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Четвертый вопрос";
+				this->label5->Text = "4. Which sentence is in the present simple tense?"
+					"\n\r1) I am going to the store tomorrow."
+					"\n\r2) I go to the store every day."
+					"\n\r3) I went to the store yesterday.";
 				count++;
 				break;
 			case 4:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Пятый вопрос";
+				this->label5->Text = "5. Which sentence is in the past simple tense?"
+					"\n\r1) I am going to the store tomorrow."
+					"\n\r2) I go to the store every day."
+					"\n\r3) I went to the store yesterday.";
 				count++;
 				break;
 			case 5:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Шестой вопрос";
+				this->label5->Text = "6. Which sentence is in the future simple tense?"
+					"\n\r1) I am going to the store tomorrow."
+					"\n\r2) I go to the store every day."
+					"\n\r3) I went to the store yesterday.";
 				count++;
 				break;
 			case 6:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Седьмой вопрос";
+				this->label5->Text = "7. What is the third person singular form"
+					"\n\rof the present simple tense for the verb (to eat)?"
+					"\n\r1) eat"
+					"\n\r2) eats"
+					"\n\r3) ate";
 				count++;
 				break;
 			case 7:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Восьмой вопрос";
+				this->label5->Text = "8. What is the past simple form"
+					"\n\rof the verb (to go)?"
+					"\n\r1) go"
+					"\n\r2) goes"
+					"\n\r3) went";
 				count++;
 				break;
 			case 8:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Девятый вопрос";
+				this->label5->Text = "9. What is the future simple form"
+					"\n\rof the verb (to be)?"
+					"\n\r1) am"
+					"\n\r2) is"
+					"\n\r3) will be";
 				count++;
 				break;
 			case 9:
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Десятый вопрос";
+				this->label5->Text = "10. Which sentence is in the present simple"
+					"\n\rtense and negative?"
+					"\n\r1) I am going to school."
+					"\n\r2) I don't go to school."
+					"\n\r3) I went to school yesterday.";
 				this->label1->Text = "Завершить\n тест";
 				count++;
 				break;
