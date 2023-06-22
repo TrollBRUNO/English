@@ -224,8 +224,10 @@ namespace English {
 		ReadFileAndSetLabel();
 
 		if (numericUpDown1->Value != 0) {
+			if (this->numericUpDown1->Value == 2) score++;
 			switch (count) {
 			case 1:
+				if (this->numericUpDown1->Value == 1) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Второй вопрос";
 				this->label5->Text = "2. What is the past simple tense used for?"
@@ -235,6 +237,7 @@ namespace English {
 				count++;
 				break;
 			case 2:
+				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Третий вопрос";
 				this->label5->Text = "3. What is the future simple tense used for?"
@@ -244,6 +247,7 @@ namespace English {
 				count++;
 				break;
 			case 3:
+				if (this->numericUpDown1->Value == 2) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Четвертый вопрос";
 				this->label5->Text = "4. Which sentence is in the present simple tense?"
@@ -253,6 +257,7 @@ namespace English {
 				count++;
 				break;
 			case 4:
+				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Пятый вопрос";
 				this->label5->Text = "5. Which sentence is in the past simple tense?"
@@ -262,6 +267,7 @@ namespace English {
 				count++;
 				break;
 			case 5:
+				if (this->numericUpDown1->Value == 1) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Шестой вопрос";
 				this->label5->Text = "6. Which sentence is in the future simple tense?"
@@ -271,6 +277,7 @@ namespace English {
 				count++;
 				break;
 			case 6:
+				if (this->numericUpDown1->Value == 2) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Седьмой вопрос";
 				this->label5->Text = "7. What is the third person singular form"
@@ -281,6 +288,7 @@ namespace English {
 				count++;
 				break;
 			case 7:
+				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Восьмой вопрос";
 				this->label5->Text = "8. What is the past simple form"
@@ -291,6 +299,7 @@ namespace English {
 				count++;
 				break;
 			case 8:
+				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Девятый вопрос";
 				this->label5->Text = "9. What is the future simple form"
@@ -301,6 +310,7 @@ namespace English {
 				count++;
 				break;
 			case 9:
+				if (this->numericUpDown1->Value == 2) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Десятый вопрос";
 				this->label5->Text = "10. Which sentence is in the present simple"
@@ -312,7 +322,7 @@ namespace English {
 				count++;
 				break;
 			case 10:
-				String ^ message = String::Format("Вы набрали {0} из 10 баллов", count);
+				String ^ message = String::Format("Вы набрали {0} из 10 баллов", score);
 				MessageBox::Show(this, message, "Результат тестирования", MessageBoxButtons::OK, MessageBoxIcon::Information);
 				//this->Close();
 				count = 0;
