@@ -44,6 +44,7 @@ namespace English {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 	protected:
 
 	private:
@@ -66,6 +67,7 @@ namespace English {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -172,6 +174,22 @@ namespace English {
 			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm3::button5_Click);
 			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(102)), static_cast<System::Int32>(static_cast<System::Byte>(85)),
+				static_cast<System::Int32>(static_cast<System::Byte>(62)));
+			this->button6->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button6->Font = (gcnew System::Drawing::Font(L"Consuela", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button6->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->button6->Location = System::Drawing::Point(12, 12);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(147, 53);
+			this->button6->TabIndex = 19;
+			this->button6->Text = L"Сменить аккаунт";
+			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm3::button6_Click);
+			// 
 			// MyForm3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -179,6 +197,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -225,6 +244,9 @@ namespace English {
 		MyForm8^ trainer = gcnew MyForm8();
 		trainer->Show();
 		//this->Close();
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm3::Hide();
 	}
 };
 }

@@ -52,6 +52,7 @@ namespace English {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ button4;
 
 	private:
 		/// <summary>
@@ -71,6 +72,7 @@ namespace English {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label4
@@ -132,6 +134,22 @@ namespace English {
 			this->label3->TabIndex = 8;
 			this->label3->Text = L"the\r\nbest";
 			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(117)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Consuela", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button4->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->button4->Location = System::Drawing::Point(12, 12);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(147, 53);
+			this->button4->TabIndex = 20;
+			this->button4->Text = L"Õ‡Á‡‰";
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm7::button4_Click);
+			// 
 			// MyForm7
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -139,6 +157,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -152,13 +171,13 @@ namespace English {
 			this->PerformLayout();
 
 		}
-		String^ filename = "E:\\œ–¿ “» ¿\\table leader.txt";
+		String^ filename = "F:\\œ–¿ “» ¿\\table leader.txt";
 
 #pragma endregion
 		private: System::Void MyForm7_Load(System::Object^ sender, System::EventArgs^ e)
 		{
 			// ◊ÚÂÌËÂ ‰‡ÌÌ˚ı ËÁ Ù‡ÈÎ‡
-			ifstream file("E:\\œ–¿ “» ¿\\table leader.txt");
+			ifstream file("F:\\œ–¿ “» ¿\\table leader.txt");
 			string line;
 			vector<pair<string, int>> data; // ¬ÂÍÚÓ Ô‡ (email, Ó˜ÍË)
 
@@ -184,5 +203,8 @@ namespace English {
 
 			label2->Text = labelText;
 		}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	MyForm7::Hide();
+}
 };
 }

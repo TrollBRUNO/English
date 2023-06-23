@@ -47,6 +47,8 @@ namespace English {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::ProgressBar^ progressBar1;
+	private: System::Windows::Forms::Button^ button4;
 
 
 
@@ -75,6 +77,8 @@ namespace English {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -103,6 +107,7 @@ namespace English {
 				static_cast<System::Byte>(204)));
 			this->numericUpDown1->ForeColor = System::Drawing::SystemColors::MenuBar;
 			this->numericUpDown1->Location = System::Drawing::Point(861, 524);
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(120, 26);
 			this->numericUpDown1->TabIndex = 1;
@@ -157,9 +162,36 @@ namespace English {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(762, 144);
 			this->label5->TabIndex = 5;
-			this->label5->Text = L"1. What is the present simple tense used for\?\r\na) Actions that happened in the pa"
-				L"st\r\nb) Actions that are happening now\r\nc) Actions that will happen in the future"
+			this->label5->Text = L"1. What is the present simple tense used for\?\r\n1) Actions that happened in the pa"
+				L"st\r\n2) Actions that are happening now\r\n3) Actions that will happen in the future"
 				L"\r\n";
+			// 
+			// progressBar1
+			// 
+			this->progressBar1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(109)), static_cast<System::Int32>(static_cast<System::Byte>(121)),
+				static_cast<System::Int32>(static_cast<System::Byte>(171)));
+			this->progressBar1->ForeColor = System::Drawing::SystemColors::HighlightText;
+			this->progressBar1->Location = System::Drawing::Point(2, 656);
+			this->progressBar1->Name = L"progressBar1";
+			this->progressBar1->Size = System::Drawing::Size(1206, 23);
+			this->progressBar1->TabIndex = 6;
+			this->progressBar1->UseWaitCursor = true;
+			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(117)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Consuela", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button4->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->button4->Location = System::Drawing::Point(12, 12);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(147, 53);
+			this->button4->TabIndex = 19;
+			this->button4->Text = L"Назад";
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm6::button4_Click);
 			// 
 			// MyForm6
 			// 
@@ -168,6 +200,8 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->progressBar1);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -197,10 +231,13 @@ namespace English {
 		String^ email = GlobalVariables::globalEmail;
 		string convertedEmail = convertToString(email); //преобразовываем переменную из String^ в string
 		if (numericUpDown1->Value != 0) {
-			if (this->numericUpDown1->Value == 2) score++;
 			switch (count) {
+			case 0:
+				if (this->numericUpDown1->Value == 2) score++;
+				break;
 			case 1:
 				if (this->numericUpDown1->Value == 1) score++;
+				this->progressBar1->PerformStep();
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Второй вопрос";
 				this->label5->Text = "2. What is the past simple tense used for?"
@@ -210,6 +247,7 @@ namespace English {
 				count++;
 				break;
 			case 2:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Третий вопрос";
@@ -220,6 +258,7 @@ namespace English {
 				count++;
 				break;
 			case 3:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 2) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Четвертый вопрос";
@@ -230,6 +269,7 @@ namespace English {
 				count++;
 				break;
 			case 4:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Пятый вопрос";
@@ -240,6 +280,7 @@ namespace English {
 				count++;
 				break;
 			case 5:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 1) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Шестой вопрос";
@@ -250,6 +291,7 @@ namespace English {
 				count++;
 				break;
 			case 6:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 2) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Седьмой вопрос";
@@ -261,6 +303,7 @@ namespace English {
 				count++;
 				break;
 			case 7:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Восьмой вопрос";
@@ -272,6 +315,7 @@ namespace English {
 				count++;
 				break;
 			case 8:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 3) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Девятый вопрос";
@@ -283,6 +327,7 @@ namespace English {
 				count++;
 				break;
 			case 9:
+				this->progressBar1->PerformStep();
 				if (this->numericUpDown1->Value == 2) score++;
 				this->numericUpDown1->Value = 0;
 				this->label3->Text = "Десятый вопрос";
@@ -295,19 +340,23 @@ namespace English {
 				count++;
 				break;
 			case 10:
+				this->progressBar1->PerformStep();
 				String ^ message = String::Format("Вы набрали {0} из 10 баллов", score);
 				MessageBox::Show(this, message, "Результат тестирования", MessageBoxButtons::OK, MessageBoxIcon::Information);
-				ofstream file("E:\\ПРАКТИКА\\table leader.txt", ios::app); //адрес
+				ofstream file("F:\\ПРАКТИКА\\table leader.txt", ios::app); //адрес
 				if (file.is_open()) {
 					file << convertedEmail << "   -   " << score << "/10" << endl;
 					file.close();
 				}
-				//this->Close();
+				MyForm6::Hide();
 				count = 0;
 				break;
 			}
 		}
 		else MessageBox::Show(this, "Вы не ввели ответ!", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm6::Hide();
 	}
 };
 }

@@ -42,6 +42,7 @@ namespace English {
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
 
 	protected:
 
@@ -63,6 +64,7 @@ namespace English {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -132,6 +134,22 @@ namespace English {
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm4::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(117)), static_cast<System::Int32>(static_cast<System::Byte>(111)),
+				static_cast<System::Int32>(static_cast<System::Byte>(140)));
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Consuela", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button4->ForeColor = System::Drawing::SystemColors::MenuBar;
+			this->button4->Location = System::Drawing::Point(12, 12);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(147, 53);
+			this->button4->TabIndex = 18;
+			this->button4->Text = L"Íàçàä";
+			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm4::button4_Click);
+			// 
 			// MyForm4
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -139,6 +157,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -155,7 +174,7 @@ namespace English {
 		String^ filename;
 #pragma endregion
 	private: System::Void MyForm4_Load(System::Object^ sender, System::EventArgs^ e) {
-		filename = "E:\\ÏÐÀÊÒÈÊÀ\\tense.txt"; //àäðåñ
+		filename = "F:\\ÏÐÀÊÒÈÊÀ\\tense.txt"; //àäðåñ
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -183,6 +202,10 @@ namespace English {
 		MyForm5^ FS_theory = gcnew MyForm5();
 		FS_theory->Show();
 		//MyForm4::Hide();
+	}
+
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm4::Hide();
 	}
 };
 }

@@ -122,13 +122,13 @@ namespace English {
 		String^ filename;
 #pragma endregion
 	private: System::Void MyForm5_Load(System::Object^ sender, System::EventArgs^ e) {
-		filename = "V:\\C121\\Атанасов\\ПРАКТИКА\\tense.txt"; //адрес
+		filename = "F:\\ПРАКТИКА\\tense.txt"; //адрес
 	}
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		/*MyForm4^ theory = gcnew MyForm4();
 		theory->ShowDialog();*/
-		//this->Close();
+		MyForm5::Hide();
 	}
 
 	bool isDocumentComplited = false;
@@ -139,15 +139,15 @@ namespace English {
 
 		if (!isDocumentComplited) {
 			if (chooseTense == "1") {
-				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Present Simple.html", System::UriKind::Absolute)); //адрес
+				this->webBrowser1->Url = (gcnew System::Uri(L"F:\\ПРАКТИКА\\Present Simple.html", System::UriKind::Absolute)); //адрес
 			}
 
 			if (chooseTense == "2") {
-				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Past Simple.html", System::UriKind::Absolute)); //адрес
+				this->webBrowser1->Url = (gcnew System::Uri(L"F:\\ПРАКТИКА\\Past Simple.html", System::UriKind::Absolute)); //адрес
 			}
 
 			if (chooseTense == "3") {
-				this->webBrowser1->Url = (gcnew System::Uri(L"V:\\C121\\Атанасов\\ПРАКТИКА\\Future Simple.html", System::UriKind::Absolute)); //адрес
+				this->webBrowser1->Url = (gcnew System::Uri(L"F:\\ПРАКТИКА\\Future Simple.html", System::UriKind::Absolute)); //адрес
 			}
 			isDocumentComplited = true;
 		}

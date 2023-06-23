@@ -195,7 +195,7 @@ namespace English {
 
 		}
 	bool login(string email, string password) {
-		ifstream file("E:\\ПРАКТИКА\\users account.txt"); // открываем файл для чтения
+		ifstream file("F:\\ПРАКТИКА\\users account.txt"); // открываем файл для чтения
 		string line;
 		while (getline(file, line)) { // читаем файл построчно
 			size_t pos = line.find(' '); // находим позицию первого пробела
@@ -217,9 +217,7 @@ namespace English {
 	}
 #pragma endregion
 	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
-		/*MyForm1^ registation = gcnew MyForm1();
-		registation->Show();*/
-		//this->Close();
+		this->Close();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ email = textBox1->Text;
@@ -231,7 +229,7 @@ namespace English {
 			MessageBox::Show(this, "Авторизация вашего аккаунта прошла успешно!", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Information);
 			MyForm3^ menu = gcnew MyForm3();
 			menu->Show();
-			//this->Close();
+			MyForm2::Hide();
 		}
 		else MessageBox::Show(this, "Данного аккаунта не существует", "Система безопасности", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
