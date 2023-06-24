@@ -3,6 +3,7 @@
 #include"MyForm6.h"
 #include"MyForm7.h"
 #include"MyForm8.h"
+#include"GlobalVariables.h"
 
 namespace English {
 
@@ -45,6 +46,7 @@ namespace English {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label2;
 	protected:
 
 	private:
@@ -68,6 +70,7 @@ namespace English {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -190,6 +193,20 @@ namespace English {
 			this->button6->UseVisualStyleBackColor = false;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm3::button6_Click);
 			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Consuela", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(75)),
+				static_cast<System::Int32>(static_cast<System::Byte>(50)));
+			this->label2->Location = System::Drawing::Point(1049, 9);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(90, 28);
+			this->label2->TabIndex = 20;
+			this->label2->Text = L"меню";
+			// 
 			// MyForm3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -197,6 +214,7 @@ namespace English {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1211, 681);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
@@ -209,6 +227,7 @@ namespace English {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"FST.English";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm3::MyForm3_FormClosing);
+			this->Load += gcnew System::EventHandler(this, &MyForm3::MyForm3_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -247,6 +266,9 @@ namespace English {
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 		MyForm3::Hide();
+	}
+	private: System::Void MyForm3_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->label2->Text = GlobalVariables::globalEmail;
 	}
 };
 }

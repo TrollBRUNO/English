@@ -151,6 +151,7 @@ namespace English {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(407, 37);
 			this->textBox2->TabIndex = 5;
+			this->textBox2->PasswordChar = '*';
 			// 
 			// textBox3
 			// 
@@ -164,6 +165,7 @@ namespace English {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(407, 37);
 			this->textBox3->TabIndex = 6;
+			this->textBox3->PasswordChar = '*';
 			// 
 			// linkLabel1
 			// 

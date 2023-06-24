@@ -97,6 +97,7 @@ namespace English {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(407, 37);
 			this->textBox2->TabIndex = 9;
+			this->textBox2->PasswordChar = '*';
 			// 
 			// textBox1
 			// 
